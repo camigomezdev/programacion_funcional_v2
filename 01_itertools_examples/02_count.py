@@ -13,6 +13,7 @@ for i in count_iter:
         break
 
 print("Fin del for")
+
 print(next(count_iter))
 print(next(count_iter))
 print(next(count_iter))

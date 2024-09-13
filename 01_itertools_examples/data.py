@@ -2,7 +2,8 @@ import random
 
 
 class GrupoUsuarios:
-    def __init__(self, usuarios):
+    def __init__(self, name, usuarios):
+        self.name = name
         self.usuarios = usuarios
         self.indice = 0
 
@@ -15,6 +16,9 @@ class GrupoUsuarios:
         usuario = self.usuarios[self.indice]
         self.indice += 1
         return usuario
+
+    def __str__(self):
+        return f"El grupo {self.name} tiene {len(self.usuarios)} usuarios"
 
 
 class GeneradorNumerosAleatorios:
@@ -31,7 +35,13 @@ class GeneradorNumerosAleatorios:
         if self.generados >= self.cantidad:
             raise StopIteration
         self.generados += 1
-        return random.randint(self.minimo, self.maximo)
+        generado = random.randint(self.minimo, self.maximo)
+        # print("Aleatorio generado:", generado)
+        return generado
+
+    def __str__(self):
+        return (f"Se generaran {self.cantidad} números aleatorios entre el"
+                "{self.minimo} y {self.maximo}")
 
 
 usuarios = [

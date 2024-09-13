@@ -28,6 +28,6 @@ print('-------')
 
 tic = time.time()
 print(factorial.cache_info())
-print('Resultado:', factorial(6))
+print('Resultado:', factorial(3))
 print((time.time() - tic)*60)
 print('-------')
